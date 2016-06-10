@@ -22,10 +22,10 @@
             </field>
         </record>
 
-        <record id="invoice_supplier_company_currency_tree" model="ir.ui.view">
+        <record id="invoice_company_currency_tree" model="ir.ui.view">
             <field name="name">Account invoice supplier (tree) - add company currency</field>
             <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+            <field name="inherit_id" ref="account.invoice_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='state']/.." position="before">
                     <field name="cc_amount_untaxed" sum="CC Untaxed Amount"/>
@@ -50,19 +50,5 @@
                 </xpath>
             </field>
         </record>
-
-        <record id="invoice_company_currency_tree" model="ir.ui.view">
-            <field name="name">Account invoice (tree) - add company currency</field>
-            <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='state']/.." position="before">
-                    <field name="cc_amount_untaxed" sum="CC Untaxed Amount"/>
-                    <field name="cc_amount_tax" sum="CC Taxed Amount"/>
-                    <field name="cc_amount_total" sum="CC Total Amount"/>
-                </xpath>
-            </field>
-        </record>
-
     </data>
 </openerp>
